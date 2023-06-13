@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LobbyWars", "LobbyWars\LobbyWars.csproj", "{08DF74EE-ADC8-4F92-A7C6-AA97DA972207}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LobbyWars.Test", "LobbyWars.Test\LobbyWars.Test.csproj", "{8B659DBC-B1BD-4F98-9888-D5AED08EBCB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB96B39F-EFD0-4195-B6F5-0659021BE699}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08DF74EE-ADC8-4F92-A7C6-AA97DA972207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08DF74EE-ADC8-4F92-A7C6-AA97DA972207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08DF74EE-ADC8-4F92-A7C6-AA97DA972207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08DF74EE-ADC8-4F92-A7C6-AA97DA972207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B659DBC-B1BD-4F98-9888-D5AED08EBCB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B659DBC-B1BD-4F98-9888-D5AED08EBCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B659DBC-B1BD-4F98-9888-D5AED08EBCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B659DBC-B1BD-4F98-9888-D5AED08EBCB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4650E6B0-0C04-4077-938C-3FFB3BCBEDE9}
+	EndGlobalSection
+EndGlobal
