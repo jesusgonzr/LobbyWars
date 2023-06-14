@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LobbyWars.Domain.Helpers;
+﻿using LobbyWars.Domain.Helpers;
 
 namespace LobbyWars.Domain.Contracts
 {
@@ -49,6 +44,15 @@ namespace LobbyWars.Domain.Contracts
         /// Gets signatures item.
         /// </summary>
         public IReadOnlyCollection<Signature> GetSignatures => this.signatures;
+
+        /// <summary>
+        /// Gets if the signature matches the role of the king.
+        /// </summary>
+        /// <returns>True or False.</returns>
+        public bool ContainsRoleKing()
+        {
+            return this.signatures.Where(c => c.GetSignatureRoleValue == SignatureRole.King).FirstOrDefault() != null;
+        }
 
         /// <summary>
         /// Method that gets all the signatures of the contract.
