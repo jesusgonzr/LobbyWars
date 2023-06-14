@@ -58,6 +58,7 @@ namespace LobbyWars.Domain.Contracts
                 "N" => SignatureRole.Notary,
                 "V" => SignatureRole.Validator,
                 "K" => SignatureRole.King,
+                "#" => SignatureRole.Empty,
                 _ => throw new ArgumentOutOfRangeException($"{value} is not valid."),
             };
         }

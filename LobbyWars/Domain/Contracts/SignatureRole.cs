@@ -12,6 +12,11 @@ namespace LobbyWars.Domain.Contracts
     public enum SignatureRole
     {
         /// <summary>
+        /// Empty (#)
+        /// </summary>
+        Empty = 0,
+
+        /// <summary>
         /// Validator
         /// </summary>
         Validator = 1,
