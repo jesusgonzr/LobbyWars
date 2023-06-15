@@ -48,8 +48,8 @@ namespace LobbyWars.Test
         [Fact]
         public void GetMinimumSignatureNecessaryContract1()
         {
-            string contract1 = "N#V";
-            string contract2 = "NVV";
+            string contract1 = "NN#V";
+            string contract2 = "KNVV";
             var command = new GetMinimumSignatureNecessaryToWin()
                             { 
                                 Contract1 = contract1,
@@ -61,7 +61,7 @@ namespace LobbyWars.Test
 
             //Assert
             Assert.NotNull(result);
-            Assert.True(result == string.Empty);
+            Assert.True(result == "N");
             this.output.WriteLine(result);
         }
 
