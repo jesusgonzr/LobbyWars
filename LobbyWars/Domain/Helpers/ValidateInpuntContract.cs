@@ -20,7 +20,7 @@ namespace LobbyWars.Domain.Helpers
         public static void ValidateContractInput(string input)
         {
             string pattern = @"^[KNV#]+$";
-            if (!Regex.IsMatch(input, pattern))
+            if (!Regex.IsMatch(input.ToUpper(), pattern))
             {
                 throw new ArgumentException("Invalid input. Only 'K', 'N', 'V', and '#' characters are allowed.");
             }

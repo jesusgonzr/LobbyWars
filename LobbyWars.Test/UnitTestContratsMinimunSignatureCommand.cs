@@ -46,7 +46,7 @@ namespace LobbyWars.Test
         }
 
         [Fact]
-        public void GetMinimumSignatureNecessaryContract1()
+        public void GetMinimumSignatureNecessaryContract()
         {
             string contract1 = "NN#V";
             string contract2 = "KNVV";
@@ -61,7 +61,27 @@ namespace LobbyWars.Test
 
             //Assert
             Assert.NotNull(result);
-            Assert.True(result == "N");
+            Assert.True(result == "K");
+            this.output.WriteLine(result);
+        }
+
+        [Fact]
+        public void GetMinimumSignatureNecessaryNotFound()
+        {
+            string contract1 = "K#N";
+            string contract2 = "KKK";
+            var command = new GetMinimumSignatureNecessaryToWin()
+            {
+                Contract1 = contract1,
+                Contract2 = contract2,
+            };
+            this.output.WriteLine(JsonConvert.SerializeObject(command));
+
+            var result = this.mediatorMock.Object.Send(command).ConfigureAwait(false).GetAwaiter().GetResult();
+
+            //Assert
+            Assert.NotNull(result);
+            Assert.True(result == "Minimal signature not found.");
             this.output.WriteLine(result);
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,30 +67,13 @@ namespace LobbyWars.Application.Commands
                 // Get variance and increase by 1 so that the result is not the same
                 var variance = contractCompletedPoints - contractUncompletedPoints + 1;
 
-                // If the contract has a king role signature, we increase the difference by 1 to avoid the validator role.
-                if (contractIncompleted.ContainsRoleKing() && variance <= 1)
+                return variance switch
                 {
-                    variance++;
-                }
-
-                string result;
-                switch (variance)
-                {
-                    case (int)SignatureRole.King:
-                        result = "K";
-                        break;
-                    case >= (int)SignatureRole.Notary:
-                        result = "N";
-                        break;
-                    case >= (int)SignatureRole.Validator:
-                        result = "V";
-                        break;
-                    default:
-                        result = "It is not possible to overcome the contract with any signature.";
-                        break;
-                }
-
-                return result;
+                    > (int)SignatureRole.King => "Minimal signature not found.",
+                    > (int)SignatureRole.Notary => "K",
+                    > (int)SignatureRole.Validator => "N",
+                    _ => "V",
+                };
             }
             else
             {
