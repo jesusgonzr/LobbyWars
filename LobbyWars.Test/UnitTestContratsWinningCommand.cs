@@ -88,7 +88,7 @@ namespace LobbyWars.Test
         public void ContractsIsSame()
         {
             string contract1 = "NNV";
-            string contract2 = "NNV";
+            string contract2 = "NVN";
             var command = new GetWinnerContract()
             {
                 Contract1 = contract1,
@@ -100,7 +100,7 @@ namespace LobbyWars.Test
 
             //Assert
             Assert.NotNull(result);
-            Assert.True(result == string.Empty);
+            Assert.True(result == "Contracts are the same.");
             this.output.WriteLine(result);
         }
     }

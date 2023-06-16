@@ -50,7 +50,7 @@ namespace LobbyWars.Application.Commands
             // Check if the contracts are the same.
             if (request.IsSameContracts())
             {
-                return string.Empty;
+                return "Contracts are the same.";
             }
 
             // Get contract objects.

@@ -41,7 +41,13 @@ namespace LobbyWars.Application.Commands.Extensions
         /// <returns>True or false.</returns>
         public static bool IsSameContracts(this GetWinnerContract request)
         {
-            return request.Contract1 == request.Contract2;
+            char[] arrayCadena1 = request.Contract1.ToUpper().ToCharArray();
+            char[] arrayCadena2 = request.Contract2.ToUpper().ToCharArray();
+
+            Array.Sort(arrayCadena1);
+            Array.Sort(arrayCadena2);
+
+            return Enumerable.SequenceEqual(arrayCadena1, arrayCadena2);
         }
     }
 }
