@@ -14,7 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LobbyWars.Application", "LobbyWars.Application\LobbyWars.Application.csproj", "{7D4F9966-2180-4EEE-B9E1-C3413B885B8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LobbyWars.APIv1", "LobbyWars.APIv1\LobbyWars.APIv1.csproj", "{801D961F-4534-4E7B-B19D-F6B9C3AD275E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LobbyWars.APIv1", "LobbyWars.APIv1\LobbyWars.APIv1.csproj", "{801D961F-4534-4E7B-B19D-F6B9C3AD275E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LobbyWars.Infrastructure", "LobbyWars.Infrastructure\LobbyWars.Infrastructure.csproj", "{2633D39B-1D6E-47A4-971C-095CBFA807E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{801D961F-4534-4E7B-B19D-F6B9C3AD275E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{801D961F-4534-4E7B-B19D-F6B9C3AD275E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{801D961F-4534-4E7B-B19D-F6B9C3AD275E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2633D39B-1D6E-47A4-971C-095CBFA807E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2633D39B-1D6E-47A4-971C-095CBFA807E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2633D39B-1D6E-47A4-971C-095CBFA807E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2633D39B-1D6E-47A4-971C-095CBFA807E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

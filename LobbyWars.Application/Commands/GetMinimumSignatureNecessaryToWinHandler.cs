@@ -16,13 +16,13 @@ namespace LobbyWars.Application.Commands
     /// </summary>
     public class GetMinimumSignatureNecessaryToWinHandler : IRequestHandler<GetMinimumSignatureNecessaryToWin, string>
     {
-        private readonly IMininumSignatureQuery queryRepository;
+        private readonly ISignatureQuery queryRepository;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GetMinimumSignatureNecessaryToWinHandler"/> class.
         /// </summary>
         /// <param name="query">IWinnerContractQuery object.</param>
-        public GetMinimumSignatureNecessaryToWinHandler(IMininumSignatureQuery query)
+        public GetMinimumSignatureNecessaryToWinHandler(ISignatureQuery query)
         {
             this.queryRepository = query ?? throw new ArgumentNullException(nameof(query));
         }

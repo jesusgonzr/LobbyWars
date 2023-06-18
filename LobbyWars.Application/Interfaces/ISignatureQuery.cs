@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LobbyWars.Domain.Contracts;
+﻿using LobbyWars.Domain.Contracts;
 
 namespace LobbyWars.Application.Interfaces
 {
     /// <summary>
-    /// IMininumSignatureQuery interface.
+    /// IContractQuery class.
     /// </summary>
-    public interface IMininumSignatureQuery
+    public interface ISignatureQuery
     {
         /// <summary>
         /// Get contract points.

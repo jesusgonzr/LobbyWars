@@ -1,7 +1,7 @@
 ﻿using LobbyWars.Application.Commands;
 using LobbyWars.Application.Interfaces;
-using LobbyWars.Application.Queries;
 using LobbyWars.Domain.Contracts;
+using LobbyWars.Infrastructure.Queries;
 using MediatR;
 using Moq;
 using Newtonsoft.Json;
@@ -16,7 +16,7 @@ namespace LobbyWars.Test
     {
         private readonly ITestOutputHelper output;
         private readonly Mock<IMediator> mediatorMock;
-        private readonly Mock<IWinnerContractQuery> winnerContractQueryMock;
+        private readonly Mock<ISignatureQuery> queryRepository;
         private readonly GetWinnerContractHandler commandHandler;
 
         /// <summary>
@@ -29,15 +29,15 @@ namespace LobbyWars.Test
 
             // Mock
             this.mediatorMock = new Mock<IMediator>();
-            this.winnerContractQueryMock = new Mock<IWinnerContractQuery>();
+            this.queryRepository = new Mock<ISignatureQuery>();
 
             // Setup IWinnerContractQuery interface
-            var query = new WinnerContractQuery();
-            this.winnerContractQueryMock.Setup(s => s.GetPoints(It.IsAny<Contract>()))
+            var query = new SignatureQuery();
+            this.queryRepository.Setup(s => s.GetPoints(It.IsAny<Contract>()))
                 .Returns<Contract>(contract => query.GetPoints(contract));
 
             // Command handler
-            this.commandHandler = new GetWinnerContractHandler(this.winnerContractQueryMock.Object);
+            this.commandHandler = new GetWinnerContractHandler(this.queryRepository.Object);
 
             // Setup mediator
             this.mediatorMock.Setup(m => m.Send(It.IsAny<GetWinnerContract>(), It.IsAny<CancellationToken>()))

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LobbyWars.Application\LobbyWars.Application.csproj" />
+    <ProjectReference Include="..\LobbyWars.Infrastructure\LobbyWars.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -16,13 +16,13 @@ namespace LobbyWars.Application.Commands
     /// </summary>
     public class GetWinnerContractHandler : IRequestHandler<GetWinnerContract, string>
     {
-        private readonly IWinnerContractQuery queryRepository;
+        private readonly ISignatureQuery queryRepository;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GetWinnerContractHandler"/> class.
         /// </summary>
         /// <param name="query">IWinnerContractQuery object.</param>
-        public GetWinnerContractHandler(IWinnerContractQuery query)
+        public GetWinnerContractHandler(ISignatureQuery query)
         {
             this.queryRepository = query ?? throw new ArgumentNullException(nameof(query));
         }

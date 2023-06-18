@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LobbyWars.Application.Interfaces;
+﻿using LobbyWars.Application.Interfaces;
 using LobbyWars.Domain.Contracts;
 
-namespace LobbyWars.Application.Queries
+namespace LobbyWars.Infrastructure.Queries
 {
     /// <summary>
-    /// WinnerContractQuery class.
+    /// ContractQuery class.
     /// </summary>
-    public class WinnerContractQuery : IWinnerContractQuery
+    public class SignatureQuery : ISignatureQuery
     {
         /// <inheritdoc/>
         public int GetPoints(Contract contract)

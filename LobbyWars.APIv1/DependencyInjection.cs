@@ -21,8 +21,7 @@ namespace LobbyWars.APIv1
 
             // Add IoC references:
             // https://docs.microsoft.com/es-es/aspnet/core/fundamentals/dependency-injection
-            services.AddTransient<Application.Interfaces.IMininumSignatureQuery, Application.Queries.MininumSignatureQuery>();
-            services.AddTransient<Application.Interfaces.IWinnerContractQuery, Application.Queries.WinnerContractQuery>();
+            services.AddTransient<Application.Interfaces.ISignatureQuery, Infrastructure.Queries.SignatureQuery>();
 
             // Add MediatR Commands/Envents.
             services.AddProcessServices();

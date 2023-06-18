@@ -1,7 +1,7 @@
 ﻿using LobbyWars.Application.Commands;
 using LobbyWars.Application.Interfaces;
-using LobbyWars.Application.Queries;
 using LobbyWars.Domain.Contracts;
+using LobbyWars.Infrastructure.Queries;
 using MediatR;
 using Moq;
 using Newtonsoft.Json;
@@ -17,7 +17,7 @@ namespace LobbyWars.Test
     {
         private readonly ITestOutputHelper output;
         private readonly Mock<IMediator> mediatorMock;
-        private readonly Mock<IMininumSignatureQuery> queryRepository;
+        private readonly Mock<ISignatureQuery> queryRepository;
         private readonly GetMinimumSignatureNecessaryToWinHandler commandHandler;
 
         /// <summary>
@@ -30,10 +30,10 @@ namespace LobbyWars.Test
 
             // Mock
             this.mediatorMock = new Mock<IMediator>();
-            this.queryRepository = new Mock<IMininumSignatureQuery>();
+            this.queryRepository = new Mock<ISignatureQuery>();
 
-            // Setup IMininumSignatureQuery interface
-            var query = new MininumSignatureQuery();
+            // Setup IContractQuery interface
+            var query = new SignatureQuery();
             this.queryRepository.Setup(s => s.GetPoints(It.IsAny<Contract>()))
                                 .Returns<Contract>(contract => query.GetPoints(contract));
 
