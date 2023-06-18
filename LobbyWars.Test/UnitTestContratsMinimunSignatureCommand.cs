@@ -66,6 +66,26 @@ namespace LobbyWars.Test
         }
 
         [Fact]
+        public void GetMinimumSignatureNecessaryContractsWithKingRol()
+        {
+            string contract1 = "KVN";
+            string contract2 = "KN#";
+            var command = new GetMinimumSignatureNecessaryToWin()
+            {
+                Contract1 = contract1,
+                Contract2 = contract2,
+            };
+            this.output.WriteLine(JsonConvert.SerializeObject(command));
+
+            var result = this.mediatorMock.Object.Send(command).ConfigureAwait(false).GetAwaiter().GetResult();
+
+            //Assert
+            Assert.NotNull(result);
+            Assert.True(result == "N");
+            this.output.WriteLine(result);
+        }
+
+        [Fact]
         public void GetMinimumSignatureNecessaryNotFound()
         {
             string contract1 = "K#N";
