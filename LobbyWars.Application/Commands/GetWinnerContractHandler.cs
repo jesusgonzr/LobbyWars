@@ -62,7 +62,11 @@ namespace LobbyWars.Application.Commands
             int contract2Point = this.queryRepository.GetPoints(contract2);
 
             // Compare and return the result.
-            if (contract1Point > contract2Point)
+            if (contract1Point == contract2Point)
+            {
+                return "Tie.";
+            }
+            else if (contract1Point > contract2Point)
             {
                 return request.Contract1;
             }

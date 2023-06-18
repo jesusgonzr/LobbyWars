@@ -62,10 +62,17 @@ namespace LobbyWars.Application.Commands
             int contractCompletedPoints = this.queryRepository.GetPoints(contractCompleted);
 
             // Compare and return the result.
-            if (contractUncompletedPoints < contractCompletedPoints)
+            if (contractUncompletedPoints <= contractCompletedPoints)
             {
                 // Get variance and increase by 1 so that the result is not the same
                 var variance = contractCompletedPoints - contractUncompletedPoints + 1;
+
+                // If the difference is 1 and the king role exists,
+                // then we must increase the difference by 1 to avoid the validator role.
+                if (variance == 1 && contractIncompleted.ContainsRoleKing())
+                {
+                    variance++;
+                }
 
                 return variance switch
                 {
