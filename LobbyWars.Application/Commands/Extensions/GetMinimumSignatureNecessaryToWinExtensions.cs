@@ -4,6 +4,7 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LobbyWars.Application.Commands.Helpers;
 using LobbyWars.Domain.Contracts;
 
 namespace LobbyWars.Application.Commands.Extensions
@@ -19,20 +20,7 @@ namespace LobbyWars.Application.Commands.Extensions
         /// <param name="request">GetMinimumSignatureNecessaryToWin object.</param>
         public static void CheckCommandRequest(this GetMinimumSignatureNecessaryToWin request)
         {
-            if (request == null)
-            {
-                throw new ArgumentNullException(nameof(request));
-            }
-
-            if (string.IsNullOrEmpty(request.Contract1))
-            {
-                throw new ArgumentNullException(nameof(request.Contract1));
-            }
-
-            if (string.IsNullOrEmpty(request.Contract2))
-            {
-                throw new ArgumentNullException(nameof(request.Contract2));
-            }
+            ContractsTools.CheckCommandRequest(request);
 
             if (request.Contract1.Length != request.Contract2.Length)
             {
@@ -57,13 +45,7 @@ namespace LobbyWars.Application.Commands.Extensions
         /// <returns>True or false.</returns>
         public static bool IsSameContracts(this GetMinimumSignatureNecessaryToWin request)
         {
-            char[] arrayCadena1 = request.Contract1.ToUpper().ToCharArray();
-            char[] arrayCadena2 = request.Contract2.ToUpper().ToCharArray();
-
-            Array.Sort(arrayCadena1);
-            Array.Sort(arrayCadena2);
-
-            return Enumerable.SequenceEqual(arrayCadena1, arrayCadena2);
+            return ContractsTools.IsSameContracts(request);
         }
 
         /// <summary>
