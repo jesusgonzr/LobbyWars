@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LobbyWars.Domain.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,11 @@ namespace LobbyWars.Application.Commands.Helpers
             {
                 throw new ArgumentNullException(nameof(request.Contract2));
             }
+
+            // We validate that the string has the characters allowed for signatures.
+            ValidateInpuntContract.ValidateContractInput(request.Contract1);
+            ValidateInpuntContract.ValidateContractInput(request.Contract2);
+
         }
 
         /// <summary>
